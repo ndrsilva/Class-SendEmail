@@ -35,7 +35,7 @@ class SendEmail:
         """..."""
 
         if self._check_internet_connection():
-            self.log.error(
+            self.log.info(
                 'Internet connection ok.'
             )
 
@@ -70,7 +70,7 @@ class SendEmail:
                 return False
 
         else:
-            self.log.info(
+            self.log.error(
                 'Internet connection error.'
             )
             return False

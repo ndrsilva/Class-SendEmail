@@ -6,7 +6,6 @@ from os import path
 from typing import Union
 
 
-
 class DirectoryHelper:
     """..."""
 

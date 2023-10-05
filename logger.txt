@@ -1,0 +1,8 @@
+2023-10-04 23:23:07,656:-:SendEmail:-:INFO:-:38:-:Internet connection ok.
+2023-10-04 23:23:07,710:-:SendEmail:-:INFO:-:48:-:The smtp.gmail.com server is accessible
+2023-10-04 23:23:10,095:-:SendEmail:-:INFO:-:61:-:Successfully authenticated to the smtp.gmail.com
+2023-10-04 23:23:10,096:-:SendEmail:-:INFO:-:140:-:Success configuring the email header
+2023-10-04 23:23:10,097:-:SendEmail:-:INFO:-:159:-:Message attached successfully
+2023-10-04 23:23:10,105:-:SendEmail:-:INFO:-:195:-:Success in attaching files
+2023-10-04 23:23:10,106:-:SendEmail:-:INFO:-:225:-:Sending...
+2023-10-04 23:23:12,758:-:SendEmail:-:INFO:-:233:-:Sent...
