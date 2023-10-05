@@ -36,7 +36,7 @@
     
     PASSWORD = '{
                     "gmail": "password for Gmail app",
-                    "outlook": "password for Gmail app"
+                    "outlook": "password for outlook app"
                 }'
     
     SERVER = '{
