@@ -8,14 +8,13 @@
 ## Prerequisite / Pré-requisito:
 - Python 3.8.3
 
-
-## Requirements:
+## Requirements / Requerimentos
+- certifi==2023.7.22
+- charset-normalizer==3.2.0
+- idna==3.4
 - python-dotenv==1.0.0
-  
-        - Obs.: It is only necessary if you are going to use an environment variable with 
-        the data in the .env file.
-        - Só é necessário se for usar variável de ambiente com os dados no arquivo .env
-
+- requests==2.31.0
+- urllib3==2.0.5
 
 ## File message.py 
     - The message.py file has a constant so you can insert an email message.
@@ -23,26 +22,26 @@
 
 ## Data that is in the .env file. <br> Dados que estão no arquivo .env
     - The data below is loaded into main.py, just create a .env file in 
-    the project file and fill it with your data correctly.
+    the project file and fill it with your data correctly in the structure below.
     - Os dados abaixo são carregados no main.py, basta criar um arquivo .env na
-    raiz do projeto e prencher-lo com os seus dados corretamente.
+    raiz do projeto e prencher-lo com os seus dados corretamente na estrutura abaixo.
 
 ## .env file
     DIR_FILES = '.C:\Users\admin\Documents\files'
     
     SENDER_EMAIL = '{
                         "gmail": "sender@gmail.com",
-                        "outlook": ""
+                        "outlook": "sender@outlook.com"
                     }'
     
     PASSWORD = '{
                     "gmail": "password for Gmail app",
-                    "outlook": ""
+                    "outlook": "password for Gmail app"
                 }'
     
     SERVER = '{
                     "gmail": "smtp.gmail.com",
-                    "outlook": "smtp.live.com"
+                    "outlook": "smtp-mail.outlook.com"
              }'
     
     PORT = 587
@@ -58,7 +57,7 @@
     
     SEND_CC = '{
                     "emails":[
-                        "andregmail.com",
+                        "andre@gmail.com",
                         "luis@outlook.com.br"
     
                     ]
@@ -67,10 +66,10 @@
     SUBJECT = 'Email subject'
 
 # Observation / Observação
-    It was using a gmail email to be able to send the emails using the SendEmail class, the common
-    password will not work in this code, so you will need to generate a password for the app in your
-    gmail account settings.
+    A Gmail email were used to send the emails with the SendEmail class, the password
+    common will not work in this code, so you will need to generate a password for the app in the
+    your gmail account settings. At the moment it only works with the Gmail account.
 
-    Foi usando um email do gmail para poder enviar os emails usando a class SendEmail, a senha 
+    Foi utilizado um email do gmail para enviar os emails com a class SendEmail, a senha 
     comum não irá funcionar nesse código, por isso será necessário gerar uma senha para app nas
-    configurações da sua conta do gmail.
+    configurações da sua conta do gmail. No momento só funciona com a conta do Gmail.

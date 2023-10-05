@@ -1,6 +1,10 @@
 """..."""
+import logging as logger
+
 from os import listdir
 from os import path
+from typing import Union
+
 
 
 class DirectoryHelper:
@@ -9,24 +13,41 @@ class DirectoryHelper:
     def __init__(self, dir_path: str) -> None:
         """..."""
 
+        logger.basicConfig(
+            level=logger.INFO,
+            format='%(asctime)s:-:%(name)s:-'
+                   ':%(levelname)s:-:%(lineno)s:-:%(message)s',
+            handlers=[logger.FileHandler('logger.txt', 'a'),
+                      logger.StreamHandler()]
+        )
+
+        self.log = logger.getLogger(__name__)
         self._dir = dir_path
 
-    def list_files_type(self, extension: str) -> list:
+    def list_files_type(self, extension: str) -> Union[list, None]:
         """..."""
 
-        list_all = self._list_files_all()
-        list_files = [file for file in list_all
-                      if file.lower().endswith(extension)]
+        try:
+            list_all = [path.join(self._dir, nome)
+                          for nome in listdir(self._dir)]
 
-        return list_files
+            list_files = [file for file in list_all
+                          if file.lower().endswith(extension)]
 
-    def _list_files_all(self) -> list:
-        """..."""
+            if len(list_files) == 0:
+                self.log.info('No files to send.')
+                return list_files
 
-        list_files = [path.join(self._dir, nome)
-                      for nome in listdir(self._dir)]
+            self.log.debug(
+                'File(s) listed successfully.'
+            )
+            return  list_files
 
-        return list_files
+        except Exception as exc:
+            self.log.debug(
+                f'Error listing files.\nError: {exc}'
+            )
+            return None
 
 
 # Test
